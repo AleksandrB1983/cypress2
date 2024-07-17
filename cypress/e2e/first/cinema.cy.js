@@ -1,5 +1,5 @@
-import seats from "../fixtures/seats.json"
-
+import seats from "../../fixtures/seats.json"
+//".../fixtures/seats.json"
 describe('"Идём в кино" тест', () => {
     beforeEach( () => {
       cy.visit('https://qamid.tmweb.ru/')
@@ -11,7 +11,7 @@ describe('"Идём в кино" тест', () => {
 
     seats.forEach((test) => {
       it(test.name, () => {
-        cy.get(".page-nav__day").then( (elements) => {
+        cy.get(".page-nav__day ").then( (elements) => {
           elements[2].click()
           cy.contains("13:00").click()
   
