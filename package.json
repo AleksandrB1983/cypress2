@@ -18,10 +18,11 @@
     "test:pet:msedge": "npx cypress run --record --group pet --spec \"cypress\\e2e\\pet.cy.js\" --browser edge",
     "test:user:msedge": "npx cypress run --record --group user --spec \"cypress\\e2e\\user.cy.js\" --browser edge",
     "test:parallel:msedge": "run-p -c test:pet:msedge test:cinema:msedge test:user:msedge",
-    "test:cinema:electron": "npx cypress run --record --group cinema --spec \"cypress\\e2e\\cinema.cy.js\" --browser electron",
+  
+    "test:first:electron": "npx cypress run --record --group first --spec \"cypress\\e2e\\first\" --browser electron",
     "test:pet:electron": "npx cypress run --record --group pet --spec \"cypress\\e2e\\pet.cy.js\" --browser electron",
-    "test:user:electron": "npx cypress run --record --group user --spec \"cypress\\e2e\\user.cy.js\" --browser electron",
-    "test:parallel:electron": "run-p -c test:pet:electron test:cinema:electron test:user:electron"
+    "test:second:electron": "npx cypress run --record --group ace --spec \"cypress\\e2e\\second\" --browser electron",
+    "test:parallel:electron": "run-p -c test:pet:electron test:first:electron test:second:electron"
   },
   "author": "",
   "license": "ISC",
