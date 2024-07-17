@@ -1,3 +1,1 @@
-start /b npx cypress run --record --key 93c47bdc-6899-4c49-8ab0-3d3a57ec8ba7 --group cinema --spec "cypress\e2e\cinema.cy.js" --ci-build-id 8
-start /b npx cypress run --record --key 93c47bdc-6899-4c49-8ab0-3d3a57ec8ba7 --group pet --spec "cypress\e2e\pet.cy.js" --ci-build-id 8
-start /b npx cypress run --record --key 93c47bdc-6899-4c49-8ab0-3d3a57ec8ba7 --group user --spec "cypress\e2e\user.cy.js" --ci-build-id 8
+
