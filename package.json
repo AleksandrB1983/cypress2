@@ -4,11 +4,32 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:cinema": "npx cypress run --record --key 93c47bdc-6899-4c49-8ab0-3d3a57ec8ba7 --group cinema --spec \"cypress\\e2e\\cinema.cy.js\" --ci-build-id 5",
+    "test:pet": "npx cypress run --record --key 93c47bdc-6899-4c49-8ab0-3d3a57ec8ba7 --group pet --spec \"cypress\\e2e\\pet.cy.js\" --ci-build-id 5",    
+    "test:user": "npx cypress run --record --key 93c47bdc-6899-4c49-8ab0-3d3a57ec8ba7  --group user --spec \"cypress\\e2e\\user.cy.js\" --ci-build-id 5",
+    "test:parallel": "run-p -c test:pet test:cinema test:user",
+    
+    "test:cinema:chrome": "npx cypress run --record --group cinema --spec \"cypress\\e2e\\cinema.cy.js\" --browser chrome-stable",
+    "test:pet:chrome": "npx cypress run --record --group pet --spec \"cypress\\e2e\\pet.cy.js\" --browser chrome-stable",
+    "test:user:chrome": "npx cypress run --record --group user --spec \"cypress\\e2e\\user.cy.js\" --browser chrome-stable",
+    "test:parallel:chrome": "run-p -c test:pet:chrome test:cinema:chrome test:user:chrome",
+        
+    "test:cinema:msedge": "npx cypress run --record --group cinema --spec \"cypress\\e2e\\cinema.cy.js\" --browser edge",
+    "test:pet:msedge": "npx cypress run --record --group pet --spec \"cypress\\e2e\\pet.cy.js\" --browser edge",
+    "test:user:msedge": "npx cypress run --record --group user --spec \"cypress\\e2e\\user.cy.js\" --browser edge",
+    "test:parallel:msedge": "run-p -c test:pet:msedge test:cinema:msedge test:user:msedge",
+    "test:cinema:electron": "npx cypress run --record --group cinema --spec \"cypress\\e2e\\cinema.cy.js\" --browser electron",
+    "test:pet:electron": "npx cypress run --record --group pet --spec \"cypress\\e2e\\pet.cy.js\" --browser electron",
+    "test:user:electron": "npx cypress run --record --group user --spec \"cypress\\e2e\\user.cy.js\" --browser electron",
+    "test:parallel:electron": "run-p -c test:pet:electron test:cinema:electron test:user:electron"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.13.0"
+    "all": "^0.0.0",
+    "cypress": "^13.13.0",
+    "npm": "^10.8.2",
+    "npm-run-all": "^4.1.5",
+    "run": "^1.5.0"
   }
 }
