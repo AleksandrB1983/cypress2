@@ -3,23 +3,22 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    
-    
-    "test:cinema:chrome": "npx cypress run --record --group cinema --spec \"cypress\\e2e\\cinema.cy.js\" --browser chrome-stable",
-    "test:pet:chrome": "npx cypress run --record --group pet --spec \"cypress\\e2e\\pet.cy.js\" --browser chrome-stable",
-    "test:user:chrome": "npx cypress run --record --group user --spec \"cypress\\e2e\\user.cy.js\" --browser chrome-stable",
-    "test:parallel:chrome": "run-p -c test:pet:chrome test:cinema:chrome test:user:chrome",
-        
-    "test:cinema:msedge": "npx cypress run --record --group cinema --spec \"cypress\\e2e\\cinema.cy.js\" --browser edge",
-    "test:pet:msedge": "npx cypress run --record --group pet --spec \"cypress\\e2e\\pet.cy.js\" --browser edge",
-    "test:user:msedge": "npx cypress run --record --group user --spec \"cypress\\e2e\\user.cy.js\" --browser edge",
-    "test:parallel:msedge": "run-p -c test:pet:msedge test:cinema:msedge test:user:msedge",
+  "scripts": {   
+
+    "test:first:chrome": "npx cypress run --record --group first --spec \"cypress\\e2e\\first\" --browser chrome",
+    "test:third:chrome": "npx cypress run --record --group third --spec \"cypress\\e2e\\third\" --browser chrome",
+    "test:second:chrome": "npx cypress run --record --group second --spec \"cypress\\e2e\\second\" --browser chrome",
+    "test:parallel:chrome": "run-p -c test:third:chrome test:first:chrome test:second:chrome",
+
+    "test:first:msedge": "npx cypress run --record --group first --spec \"cypress\\e2e\\first\" --browser edge",
+    "test:third:msedge": "npx cypress run --record --group third --spec \"cypress\\e2e\\third\" --browser edge",
+    "test:second:msedge": "npx cypress run --record --group second --spec \"cypress\\e2e\\second\" --browser edge",
+    "test:parallel:msedge": "run-p -c test:third:msedge test:first:msedge test:second:msedge",
   
     "test:first:electron": "npx cypress run --record --group first --spec \"cypress\\e2e\\first\" --browser electron",
-    "test:pet:electron": "npx cypress run --record --group pet --spec \"cypress\\e2e\\pet.cy.js\" --browser electron",
-    "test:second:electron": "npx cypress run --record --group ace --spec \"cypress\\e2e\\second\" --browser electron",
-    "test:parallel:electron": "run-p -c test:pet:electron test:first:electron test:second:electron"
+    "test:third:electron": "npx cypress run --record --group third --spec \"cypress\\e2e\\third\" --browser electron",
+    "test:second:electron": "npx cypress run --record --group second --spec \"cypress\\e2e\\second\" --browser electron",
+    "test:parallel:electron": "run-p -c test:third:electron test:first:electron test:second:electron"
   },
   "author": "",
   "license": "ISC",
